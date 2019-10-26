@@ -49,22 +49,22 @@
                     <input asp-for="Input.Mentor.Bio" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="Input.Mentor.ImageUrl"></label>
+                    <label>Profile Image Url</label>
                     <input asp-for="Input.Mentor.ImageUrl" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="Input.Mentor.LinkedInUrl"></label>
+                    <label>LinkedIn Url</label>
                     <input asp-for="Input.Mentor.LinkedInUrl" class="form-control" />
                 </div>
             }
             @if (User.IsInRole("Entreprenuer"))
             {
                 <div class="form-group">
-                    <label asp-for="Input.Entrepenuer.FirstName"></label>
+                    <label>First Name</label>
                     <input asp-for="Input.Entrepenuer.FirstName" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="Input.Entrepenuer.LastName"></label>
+                    <label>Last Name</label>
                     <input asp-for="Input.Entrepenuer.LastName" class="form-control" />
                 </div>
 
