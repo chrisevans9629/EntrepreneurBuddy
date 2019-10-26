@@ -10,7 +10,7 @@ Entrepreneurs with specific issues or questions can use entrepreneurchute to col
 Mentors can collaborate with entrepreneurs to gain a fresh perspective and 
 new ideas. They can also discover startup businesses to partner with and gain prestige.
 
-### :grey_question: That's interesting and all, but what's in it for a mentor like me?
+### :grey_question: That's interesting, but what's in it for a mentor like me?
 - **Prestige** Mentors get an opportunity to work with people who are searching for their help. They will get a chance to share their experience and be rated based on that expierience.
 - **Networking** Mentors will get a chance to work with people with similar interests and expand their brand.
 - **Profit** Mentors can offer their services for a fee in any way they would like. Entrepreneurchute simply connects the two parties together!
