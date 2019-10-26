@@ -22,7 +22,7 @@ Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azure
 If you are a little more tech oriented, [**You can view our open api here**](https://psu-codeathon.azurewebsites.net/swagger)
 ## Examples and Screenshots
 
-# Installation
+# :electric_plug: Installation
 This is information for developers for building and running the app from source.
 ## Libraries Used
 - Vue
