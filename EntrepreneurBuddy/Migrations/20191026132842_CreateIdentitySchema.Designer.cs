@@ -4,14 +4,16 @@ using EntrepreneurBuddy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace EntrepreneurBuddy.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20191026132842_CreateIdentitySchema")]
+    partial class CreateIdentitySchema
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -80,30 +82,19 @@ namespace EntrepreneurBuddy.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<int?>("EntrepreneurMentoringRequestId");
-
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
+
+                    b.Property<int>("MentoringRequestId");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AppUserId");
 
-                    b.HasIndex("EntrepreneurMentoringRequestId");
+                    b.HasIndex("MentoringRequestId");
 
                     b.ToTable("Entrepenuers");
-                });
-
-            modelBuilder.Entity("EntrepreneurBuddy.Models.EntrepreneurMentoringRequest", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EntrepreneurMentoringRequests");
                 });
 
             modelBuilder.Entity("EntrepreneurBuddy.Models.Mentor", b =>
@@ -145,15 +136,11 @@ namespace EntrepreneurBuddy.Migrations
 
                     b.Property<DateTime>("DateCreated");
 
-                    b.Property<int?>("EntrepreneurMentoringRequestId");
-
                     b.Property<int>("MentorId");
 
                     b.Property<string>("Topic");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EntrepreneurMentoringRequestId");
 
                     b.HasIndex("MentorId");
 
@@ -280,9 +267,10 @@ namespace EntrepreneurBuddy.Migrations
                         .WithMany()
                         .HasForeignKey("AppUserId");
 
-                    b.HasOne("EntrepreneurBuddy.Models.EntrepreneurMentoringRequest")
-                        .WithMany("Entrepenuers")
-                        .HasForeignKey("EntrepreneurMentoringRequestId");
+                    b.HasOne("EntrepreneurBuddy.Models.MentoringRequest")
+                        .WithMany()
+                        .HasForeignKey("MentoringRequestId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("EntrepreneurBuddy.Models.Mentor", b =>
@@ -294,10 +282,6 @@ namespace EntrepreneurBuddy.Migrations
 
             modelBuilder.Entity("EntrepreneurBuddy.Models.MentoringRequest", b =>
                 {
-                    b.HasOne("EntrepreneurBuddy.Models.EntrepreneurMentoringRequest")
-                        .WithMany("MentoringRequests")
-                        .HasForeignKey("EntrepreneurMentoringRequestId");
-
                     b.HasOne("EntrepreneurBuddy.Models.Mentor")
                         .WithMany()
                         .HasForeignKey("MentorId")

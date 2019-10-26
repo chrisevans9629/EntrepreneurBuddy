@@ -16,12 +16,12 @@ namespace EntrepreneurBuddy.Areas.Identity
         public void Configure(IWebHostBuilder builder)
         {
             builder.ConfigureServices((context, services) => {
-                services.AddDbContext<EntrepreneurBuddyContext>(options =>
+                services.AddDbContext<AppDbContext>(options =>
                     options.UseSqlServer(
-                        context.Configuration.GetConnectionString("EntrepreneurBuddyContextConnection")));
+                        context.Configuration.GetConnectionString("DefaultConnection")));
 
-                services.AddDefaultIdentity<EntrepreneurBuddyUser>()
-                    .AddEntityFrameworkStores<EntrepreneurBuddyContext>();
+                services.AddDefaultIdentity<AppUser>()
+                    .AddEntityFrameworkStores<AppDbContext>();
             });
         }
     }

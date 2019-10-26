@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @using EntrepreneurBuddy.Areas.Identity.Data
-@inject SignInManager<EntrepreneurBuddyUser> SignInManager
-@inject UserManager<EntrepreneurBuddyUser> UserManager
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))

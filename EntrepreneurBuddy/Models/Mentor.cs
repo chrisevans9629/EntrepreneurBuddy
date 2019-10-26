@@ -7,6 +7,7 @@ namespace EntrepreneurBuddy.Models
 {
     public class Mentor
     {
+        public string AppUserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Skills { get; set; }
