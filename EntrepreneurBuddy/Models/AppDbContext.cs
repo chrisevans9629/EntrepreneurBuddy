@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using EntrepreneurBuddy.Models;
 using Microsoft.EntityFrameworkCore;
-namespace EntrepreneurBuddy.Models
+namespace EntrepreneurBuddy
 {
     public class AppDbContext : DbContext
     {

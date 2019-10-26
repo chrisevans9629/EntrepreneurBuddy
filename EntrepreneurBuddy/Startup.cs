@@ -72,6 +72,8 @@ namespace EntrepreneurBuddy
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
+            app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
@@ -86,6 +88,7 @@ namespace EntrepreneurBuddy
             }
 
             
+
         }
     }
 }
