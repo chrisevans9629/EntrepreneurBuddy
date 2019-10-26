@@ -69,13 +69,15 @@
 
         </div>
 
-        <a href="javascript:void(0)" class="button-light" @click="joinHelpRequest()"> + Join</a>
+        <a href="javascript:void(0)" class="button-light" @click="joinHelpRequest()" v-if="ismentor=='False'"> + Join</a>
         <div class="black-text mt-3 bg-white p-2 rounded" v-for="email in request.emails">
           {{email}}
         </div>
       </div>
 
     </div>
+
+
     <modal name="confirm-modal">
       <div class="m-5 text-center">
         <p class="text-center">You have been added to this help request!</p>
@@ -102,7 +104,10 @@
       request: {
         type: Object,
         default: () => { }
-      },
+      }, ismentor: {
+        type: String,
+        default: 'False'
+      }
     },
 
 

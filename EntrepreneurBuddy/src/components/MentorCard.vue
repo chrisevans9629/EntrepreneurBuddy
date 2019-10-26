@@ -96,7 +96,8 @@
                 type: Object,
                 default: () => { }
             },
-            rounded: Boolean,
+            rounded: Boolean
+            
         },
         mounted() {
             this.likeCount = this.mentor.rating;
