@@ -1,18 +1,18 @@
 <style scoped>
-.button {
-  background-color: #24305e;
-  -moz-border-radius: 17px;
-  -webkit-border-radius: 17px;
-  border-radius: 17px;
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
-  font-family: Arial;
-  font-size: 17px;
-  font-weight: bold;
-  padding: 5px 10px;
-  text-decoration: none;
-}
+  .button {
+    background-color: #24305e;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    border-radius: 17px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+  }
 
   .button:hover {
     background-color: #4a7897;
@@ -35,6 +35,7 @@
     text-align: center;
     margin-bottom: 5px;
     margin-top: 5px;
+    background-color: #fff;
     /* -webkit-text-fill-color: #fff; */
 
   }
@@ -47,11 +48,11 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     /* background-size: cover; */
-    object-fit:cover;
+    object-fit: cover;
 
   }
 
-  .thumb{
+  .thumb {
     height: 20px;
     width: 20px;
     margin: 2px;
@@ -79,14 +80,14 @@
       <p class:="black-text m-0">{{mentor.position}}</p>
       <a :href="'/home/mentoringrequests/'+mentor.id" class="button text-white">Request Help</a>
       <br>
-      <img src="/images/thumbs-up-solid.png" class="thumb float-right ml-2 mr-4" @click="addLike()"/>
+      <img src="/images/thumbs-up-solid.png" class="thumb float-right ml-2 mr-4" @click="addLike()" />
       <p class="float-right">{{mentor.rating}}</p>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+  import axios from 'axios';
 
   export default {
     name: 'MentorCard',
@@ -98,12 +99,12 @@ import axios from 'axios';
       rounded: Boolean,
     },
 
-  methods: {
-    async addLike() {
+    methods: {
+      async addLike() {
         const { data } = await axios.post('/api/Mentors/' + this.mentor.id + '/like');
         this.mentor.rating++;
       }
-  }
+    }
   }
 
 </script>
