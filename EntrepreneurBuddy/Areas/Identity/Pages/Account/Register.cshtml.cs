@@ -79,6 +79,7 @@ namespace EntrepreneurBuddy.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
+                    await _userManager.AddToRoleAsync(user, "Entreprenuer");
                     var entreprenuer = new Entrepenuer() { AppUserId = user.Id, FirstName= Input.FirstName, LastName = Input.LastName, Email = Input.Email};
                     dbContext.Add(entreprenuer);
                     dbContext.SaveChanges();
