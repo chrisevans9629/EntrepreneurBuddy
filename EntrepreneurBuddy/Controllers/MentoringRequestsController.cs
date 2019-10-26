@@ -89,7 +89,7 @@ namespace EntrepreneurBuddy.Controllers
                 Request = mentoringRequest,
                 AttendCount = _context.EntrepreneurMentoringRequests.Count(r => r.MentoringRequestId == mentoringRequest.Id)
             };
-            return CreatedAtAction("GetMentoringRequest", new { id = mentoringRequest.Id }, request);
+            return Ok(request);
         }
 
         // DELETE: api/MentoringRequests/5
