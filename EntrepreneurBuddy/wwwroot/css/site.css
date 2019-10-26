@@ -41,6 +41,21 @@ a.navbar-brand {
   text-decoration: none;
 }
 
+.button-light {
+  background-color: #91b3be;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
 .button:hover {
   background-color: #4a7897;
 }
@@ -99,6 +114,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #efefef;
 }
 .footer {
   position: absolute;

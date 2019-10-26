@@ -41,10 +41,10 @@
 
         <div class="card">
           <div class="border">
-            <div class="tutor-request-card py-3">
+            <div class="navbar-custom tutor-request-card py-3">
               <div class="pl-2 ">
-                <span class="h1 pl-2">Requests</span>
-                <a href="#" class="button mx-5" @click="launchCreateRequestModal()">+ Add Request</a>
+                <span class="h1 pl-2 text-white">Requests</span>
+                <a href="#" class="button-light mx-5 float-right" @click="launchCreateRequestModal()">+ Add Request</a>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
         </div>
         <div class="row mt-3">
           <div class="col-2 offset-8">
-            <button type="button" class="btn" @click="$modal.hide('request-modal')">Cancel</button>
+            <button type="button" class="button" @click="$modal.hide('request-modal')">Cancel</button>
           </div>
           <div class="col-2">
             <button type="button" class="button" @click="submitRequest">
