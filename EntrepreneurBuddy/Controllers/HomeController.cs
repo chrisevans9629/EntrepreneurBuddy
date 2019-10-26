@@ -12,14 +12,20 @@ namespace EntrepreneurBuddy.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        AppDbContext _context;
+public HomeController(AppDbContext context)
+{
+ _context = context;   
+}
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult MentoringRequests()
-        {
-            return View();
+        public IActionResult MentoringRequests(int id)
+       {
+            var mentor = _context.Mentors.Find(id);
+            return View(mentor);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

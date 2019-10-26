@@ -1,9 +1,10 @@
+@model EntrepreneurBuddy.Models.Mentor
 @using Newtonsoft.Json
 
 @{
     ViewData["Title"] = "MentoringRequests";
 }
 
-<h1>MentoringRequests Requests</h1>
+<h1>Mentoring Requests</h1>
 
-<tutor-requests></tutor-requests>
+<mentoring-requests :mentor='@Json.Serialize(Model)' class=""></mentoring-requests>

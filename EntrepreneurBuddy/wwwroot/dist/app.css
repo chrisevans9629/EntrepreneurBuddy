@@ -77,3 +77,50 @@ img[data-v-942037be] {
   box-shadow: 15px 15px 15px -2px rgba(219, 219, 219, 1);
 }
 
+
+.mentor-request-card[data-v-4b61b8e5] {
+  background-color: #F5F4F4;
+}
+img[data-v-4b61b8e5] {
+  width: 300px;
+}
+
+
+.button[data-v-e7d9ee82] {
+  background-color: #24305E;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 10px 10px;
+  text-decoration: none;
+}
+.button[data-v-e7d9ee82]:hover {
+  background-color: #91B3BE;
+}
+.button[data-v-e7d9ee82]:active {
+  position: relative;
+  top: 1px;
+}
+.card[data-v-e7d9ee82] {
+  border: 1px #efefef solid;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+  -webkit-transition-property: -webkit-box-shadow;
+  transition-property: -webkit-box-shadow;
+  transition-property: box-shadow;
+  transition-property: box-shadow, -webkit-box-shadow;
+  -webkit-transition-duration: .1s;
+          transition-duration: .1s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  text-align: left;
+  padding: 10px;
+  background-color: #F5F4F4;
+  border-radius: 15px;
+  width: 100%;
+}
+
