@@ -21,7 +21,10 @@ public HomeController(AppDbContext context)
         {
             return View();
         }
-
+        public IActionResult Analytics()
+        {
+            return View();
+        }
         public IActionResult MentoringRequests(int id)
        {
             var mentor = _context.Mentors.Find(id);
