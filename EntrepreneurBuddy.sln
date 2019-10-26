@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntrepreneurBuddy", "EntrepreneurBuddy\EntrepreneurBuddy.csproj", "{2A69E536-BFCD-41CD-BC0C-3C463B0F81DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntrepreneurBuddy", "EntrepreneurBuddy\EntrepreneurBuddy.csproj", "{2A69E536-BFCD-41CD-BC0C-3C463B0F81DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4245C3F7-2BED-46FA-BE98-B4F3BD9BD13B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		readme.md = readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
