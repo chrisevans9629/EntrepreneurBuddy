@@ -80,7 +80,7 @@ namespace EntrepreneurBuddy.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user, "Entreprenuer");
-                    var entreprenuer = new Entrepenuer() { AppUserId = user.Id, FirstName= Input.FirstName, LastName = Input.LastName, Email = Input.Email};
+                    var entreprenuer = new Entreprenuer() { AppUserId = user.Id, FirstName= Input.FirstName, LastName = Input.LastName, Email = Input.Email};
                     dbContext.Add(entreprenuer);
                     dbContext.SaveChanges();
                     //todo: associate users
