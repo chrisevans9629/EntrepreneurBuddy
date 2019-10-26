@@ -30,9 +30,9 @@
 
           <div class="col-md-8">
            <div class="ml-2 mt-3">
-              <p class="name-color font-weight-bold">{{mentor.firstName}} {{mentor.lastName}} | {{mentor.position}}</p>
+              <h3 class="name-color font-weight-bold">{{mentor.firstName}} {{mentor.lastName}} | {{mentor.position}}</h3>
               <p>{{mentor.bio}}</p>
-              <div class="badge badge-pill text-white badge-blue mr-2 mb-2" v-for="skill in mentor.skillsList" :key="skill">{{skill}}</div>
+              <div class="badge badge-pill text-white badge-blue mr-2 mb-4" v-for="skill in mentor.skillsList" :key="skill">{{skill}}</div>
                 <div class="d-flex">
                   <p>{{mentor.rating}}</p>
                   <img src="/images/thumbs-up-solid.png" class="thumb ml-2"/>
