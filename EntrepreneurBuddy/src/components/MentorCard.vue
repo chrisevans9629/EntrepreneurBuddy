@@ -15,7 +15,7 @@
   }
 
   .button:hover {
-    background-color: #C8F2DC;
+    background-color: #4a7897;
   }
 
   .button:active {
@@ -34,6 +34,7 @@
     transition-timing-function: linear;
     text-align: center;
     margin-bottom: 5px;
+    margin-top: 5px;
     /* -webkit-text-fill-color: #fff; */
 
   }
@@ -59,6 +60,7 @@
   .round-card {
     border-radius: 4px;
     overflow: hidden;
+    margin-bottom: 20px;
   }
 
   .mentor-card:hover {
@@ -71,14 +73,14 @@
 
 <template>
   <div class="mentor-card" :class="{'round-card':rounded}">
-    <img :src="mentor.imageUrl" class="card-img">
+    <img :src="mentor.imageUrl" class="card-img img-fluid">
     <div class="ml-3 mt-3 font-weight-bold">
       <p class="name-color">{{mentor.firstName}} {{mentor.lastName}}</p>
-      <p class:="black-text">{{mentor.position}}</p>
+      <p class:="black-text m-0">{{mentor.position}}</p>
       <a :href="'/home/mentoringrequests/'+mentor.id" class="button text-white">Request Help</a>
       <br>
-      <img src="/images/thumbs-up-solid.png" class="thumb" @click="addLike()"/>
-      <p>{{mentor.rating}}</p>
+      <img src="/images/thumbs-up-solid.png" class="thumb float-right ml-2 mr-4" @click="addLike()"/>
+      <p class="float-right">{{mentor.rating}}</p>
     </div>
   </div>
 </template>
