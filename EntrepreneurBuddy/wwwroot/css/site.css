@@ -26,11 +26,41 @@ a.navbar-brand {
   color: #fff;
 }
 
-/* .crop {
-  height: 300px;
-  width: 400px;
-  overflow: hidden;
- } */
+.button {
+  background-color: #24305e;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #4a7897;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+a.link {
+  color: #4a7897;
+}
+
+a.link:active {
+  color: #be5d16;
+}
+
+a.link:hover {
+  color: #be5d16;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */
