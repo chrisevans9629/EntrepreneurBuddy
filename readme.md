@@ -1,6 +1,8 @@
+
+![](logo.png)
 # entrepreneurchute
 
-## What is this?
+## What is entrepreneurchute?
 entrepreneurchute is the latest and greatest technology 
 to connect aspiring entrepreneurs and experienced mentors. 
 
@@ -16,8 +18,8 @@ new ideas. They can also discover startup businesses to partner with.
 This is also a way for established
 individuals to give back to the business community by fostering entrepreneurship.
 ## How do I use it?
-Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/)
-
+Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/)  
+If you are a little more tech oriented, [**You can view our open api here**](https://psu-codeathon.azurewebsites.net/swagger)
 ## Examples and Screenshots
 
 # Installation
