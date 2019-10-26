@@ -39,18 +39,22 @@
 
 
 <template>
-
-
   <div class="card shadow-sm ">
     <div class="m-2">
-      <p><b>Request:</b> {{request.topic}}</p>
+      <p><b>Request:</b> {{request.request.topic}}</p>
       <div class="row" style="padding:10px 10px;">
         <h3>{{request.attendCount}}</h3>
         <div style="padding:0px 30px" />
-        <a href="#" class="button" @click="joinSession()">+ Help Request</a>
+        <a href="#" class="button" @click="launchJoinHelpRequest()">+ Join Help Request</a>
       </div>
 
     </div>
+    <modal>
+      <p>You have been added to this help request!</p>
+      <button type="button" class="button" @click="closeModal">
+        OK!
+      </button>
+    </modal>
   </div>
 
 </template>
@@ -66,12 +70,22 @@
         default: () => { }
       },
     },
+
+
     methods: {
-      async joinSession() {
-        const { data } = await axios.put('/api/MentoringRequests/join?requestid=' + this.request.id);
+      async joinHelpRequest() {
+        const { data } = await axios.put('/api/Entrepenuers/Join/' + this.request.id);
         this.request = data;
+        this.request.attendCount++;
+        this.$modal.show('request-modal');
+      },
+
+      async closeModal() {
+        this.$modal.close('request-modal');
       }
     },
+
+
 
   }
 

@@ -11,19 +11,61 @@
 
 <template>
   <div>
-    <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
-    <img :src="mentor.imageUrl">
-    <div class="ml-3 mt-3">
-      <p>{{mentor.firstName}} {{mentor.lastName}}</p>
-      <p>{{mentor.bio}}</p>
-      <p>{{mentor.skills}}</p>
-      <p>{{mentor.rating}}</p>
-    </div>
-    <div class="row mx-0">
-      <div v-for="request in mentoringRequests" class="col-md-4 p-4 " :key="request.id">
-        <request-card :request="request"></request-card>
+    <div>
+      <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
+      <div v-else>
+        <img :src="mentor.imageUrl">
+        <div class="ml-3 mt-3">
+          <p>{{mentor.firstName}} {{mentor.lastName}}</p>
+          <p>{{mentor.bio}}</p>
+          <p>{{mentor.skills}}</p>
+          <p>{{mentor.rating}}</p>
+        </div>
+
+        <div class="card">
+          <div class="border">
+            <div class="tutor-request-card py-3">
+              <div class="pl-2 ">
+                <span class="h1 pl-2">Requests</span>
+                <a href="#" class="button mx-5" @click="launchCreateRequestModal()">+ Add Request</a>
+              </div>
+            </div>
+          </div>
+          <div class="row mx-0">
+            <div v-for="request in mentoringRequests" class="col-md-4 p-4 " :key="request.id">
+              <request-card :request="request"></request-card>
+            </div>
+          </div>
+        </div>
+
+
       </div>
     </div>
+
+    <modal name="request-modal" height="auto" :scrollable="true">
+      <div class="px-5 py-3">
+        <div class="row">
+          <div class="col-12">
+            <h4>Add Request</h4>
+          </div>
+        </div>
+        <div class="row  mt-3">
+          <div class="col-12">
+            <input class="form-control" placeholder="Request Topic" v-model="requestForm.topic">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-2 offset-8">
+            <button type="button" class="btn" @click="$modal.hide('request-modal')">Cancel</button>
+          </div>
+          <div class="col-2">
+            <button type="button" class="button" @click="submitRequest">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </modal>
   </div>
 
 </template>
@@ -36,6 +78,11 @@
     data: () => ({
       mentoringRequests: [],
       loading: false,
+      currentUser: null,
+      requestForm: {
+        topic: '',
+        mentorId: 0
+      }
     }),
     props: {
       mentor: {
@@ -46,6 +93,7 @@
 
     mounted() {
       this.getMentoringRequests();
+      this.getUser();
 
     },
 
@@ -56,6 +104,24 @@
         this.mentoringRequests = data;
         this.loading = false;
       },
+
+      async getUser() {
+        const { data } = await axios.get('/api/Entrepenuers/Current/');
+        this.currentUser = data;
+      },
+
+      async launchCreateRequestModal() {
+        this.$modal.show('request-modal');
+      },
+
+      async submitRequest() {
+        this.requestForm.mentorId = this.mentor.id;
+        this.loading = true;
+        await axios.post('/api/mentoringrequests/', this.requestForm);
+        this.$modal.hide('request-modal');
+        await this.getMentoringRequests();
+      }
+
 
     },
   };
