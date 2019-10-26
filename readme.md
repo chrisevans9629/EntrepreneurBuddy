@@ -3,23 +3,21 @@
 ## What is entrepreneurchute?
 
 entrepreneurchute is the latest and greatest technology 
-to connect aspiring entrepreneurs and experienced mentors. 
+to **connect aspiring entrepreneurs and experienced mentors**. 
 
-Entrepreneurs with specific issues or questions can use this to connect
-them with one of our expert mentors that have the skills they are looking for.
-
-Entrepreneurs also have the opportunity to connect with other businesspeople that 
-share the same goals. 
+Entrepreneurs with specific issues or questions can use entrepreneurchute to collaborate with one of our expert mentors who have the skills they are looking for. Entreprenuers can request topics for mentorship in which fellow entreprenuers can join.  Entreprenuers can then share their experience and recommendation by rating the mentor.
 
 Mentors can collaborate with entrepreneurs to gain a fresh perspective and 
-new ideas. They can also discover startup businesses to partner with.
+new ideas. They can also discover startup businesses to partner with and gain prestige.
 
-This is also a way for established
-individuals to give back to the business community by fostering entrepreneurship.
-## That's amazing! but how do I use it?
+### :grey_question: That's interesting and all, but what's in it for a mentor like me?
+- **Prestige** Mentors get an opportunity to work with people who are searching for their help. They will get a chance to share their experience and be rated based on that expierience.
+- **Networking** Mentors will get a chance to work with people with similar interests and expand their brand.
+- **Profit** Mentors can offer their services for a fee in any way they would like. Entrepreneurchute simply connects the two parties together!
+## :open_mouth::open_mouth::open_mouth: That's amazing! but how do I use it?
 Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/)  
 If you are a little more tech oriented, [**You can view our open api here**](https://psu-codeathon.azurewebsites.net/swagger)
-## Examples and Screenshots
+## :camera: Examples and Screenshots
 
 # :electric_plug: Installation
 This is information for developers for building and running the app from source.
