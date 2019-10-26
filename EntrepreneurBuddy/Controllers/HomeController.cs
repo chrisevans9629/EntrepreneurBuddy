@@ -15,7 +15,7 @@ namespace EntrepreneurBuddy.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult MentoringRequests()
         {
             return View();
         }
