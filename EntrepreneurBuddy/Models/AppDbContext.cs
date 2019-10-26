@@ -37,7 +37,7 @@ namespace EntrepreneurBuddy
             modelBuilder.Entity<Mentor>(p =>
             {
                 p.HasOne<AppUser>().WithMany().HasForeignKey(r=>r.AppUserId);
-
+                p.Ignore(r => r.SkillsList);
             });
 
             

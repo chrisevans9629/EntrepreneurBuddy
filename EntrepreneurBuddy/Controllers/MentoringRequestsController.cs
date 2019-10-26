@@ -19,8 +19,6 @@ namespace EntrepreneurBuddy.Controllers
         {
             _context = context;
         }
-
-        // GET: api/MentoringRequests
         [HttpGet("{mentorId}")]
         public async Task<ActionResult<IEnumerable<MentoringRequestDto>>> GetMentoringRequests(int mentorId)
         {
@@ -29,56 +27,6 @@ namespace EntrepreneurBuddy.Controllers
                 Request =p, AttendCount = _context.EntrepreneurMentoringRequests.Count(r=>r.MentoringRequestId == p.Id)
             }).ToListAsync();
         }
-
-       
-
-
-
-        // GET: api/MentoringRequests/5
-        //[HttpGet("{id}")]
-        //public async Task<ActionResult<MentoringRequest>> GetMentoringRequest(int id)
-        //{
-        //    var mentoringRequest = await _context.MentoringRequests.FindAsync(id);
-
-        //    if (mentoringRequest == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return mentoringRequest;
-        //}
-
-        // PUT: api/MentoringRequests/5
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutMentoringRequest(int id, MentoringRequest mentoringRequest)
-        //{
-        //    if (id != mentoringRequest.Id)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    _context.Entry(mentoringRequest).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!MentoringRequestExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    return NoContent();
-        //}
-
-        // POST: api/MentoringRequests
         [HttpPost]
         public async Task<ActionResult<MentoringRequestDto>> PostMentoringRequest(MentoringRequest mentoringRequest)
         {
@@ -105,8 +53,6 @@ namespace EntrepreneurBuddy.Controllers
             };
             return Ok(request);
         }
-
-        // DELETE: api/MentoringRequests/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<MentoringRequest>> DeleteMentoringRequest(int id)
         {
@@ -122,9 +68,5 @@ namespace EntrepreneurBuddy.Controllers
             return mentoringRequest;
         }
 
-        private bool MentoringRequestExists(int id)
-        {
-            return _context.MentoringRequests.Any(e => e.Id == id);
-        }
     }
 }
