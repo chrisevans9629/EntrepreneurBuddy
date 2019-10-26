@@ -83,6 +83,10 @@ a.link:hover {
   color: #be5d16;
 }
 
+.badge-blue {
+  background: #4a7897;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
