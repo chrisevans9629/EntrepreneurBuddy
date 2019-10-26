@@ -4,23 +4,40 @@
 
   }
 
-  img {
-    width: 300px;
+  .card-img {
+    position: relative;
+    align-self: auto;
+    width: 400px;
+    height: 300px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    object-fit: cover;
+
   }
 </style>
 
 <template>
+
   <div>
-    <div>
-      <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
-      <div v-else>
-        <img :src="mentor.imageUrl">
-        <div class="ml-3 mt-3">
-          <p>{{mentor.firstName}} {{mentor.lastName}}</p>
-          <p>{{mentor.bio}}</p>
-          <p>{{mentor.skills}}</p>
-          <p>{{mentor.rating}}</p>
+    <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
+    <div v-else>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <img class="card-img" :src="mentor.imageUrl">
+          </div>
         </div>
+
+        <div class="col-md-6">
+          <div class="ml-3 mt-3">
+            <p class="name-color font-weight-bold">{{mentor.firstName}} {{mentor.lastName}}</p>
+            <p>{{mentor.bio}}</p>
+            <p>{{mentor.skills}}</p>
+            <p>{{mentor.rating}}</p>
+          </div>
+        </div>
+
 
         <div class="card">
           <div class="border">

@@ -1,28 +1,4 @@
 <style scoped>
-  .button {
-    background-color: #24305E;
-    -moz-border-radius: 17px;
-    -webkit-border-radius: 17px;
-    border-radius: 17px;
-    display: inline-block;
-    cursor: pointer;
-    color: #000000;
-    font-family: Arial;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-  }
-
-  .button:hover {
-    background-color: #91B3BE;
-  }
-
-  .button:active {
-    position: relative;
-    top: 1px;
-  }
-
   .card {
     border: 1px #efefef solid;
     transition-timing-function: ease-in;
@@ -45,7 +21,7 @@
       <div class="row" style="padding:10px 10px;">
         <h3>{{request.attendCount}}</h3>
         <div style="padding:0px 30px" />
-        <a href="#" class="button" @click="joinHelpRequest()"> Join Help Request</a>
+        <a href="javascript:void(0)" class="button" @click="joinHelpRequest()"> Join Help Request</a>
       </div>
 
     </div>
@@ -74,14 +50,13 @@
 
     methods: {
       async joinHelpRequest() {
-        const { data } = await axios.post('/api/Entrepenuers/Join/' + this.request.id);
-        this.request = data;
+        await axios.post('/api/Entrepenuers/Join/' + this.request.request.id);
         this.request.attendCount++;
         this.$modal.show('confirm-modal');
       },
 
       async closeModal() {
-        this.$modal.close('confirm-modal');
+        this.$modal.hide('confirm-modal');
       }
     },
 
