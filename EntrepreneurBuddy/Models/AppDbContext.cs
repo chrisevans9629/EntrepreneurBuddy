@@ -31,6 +31,8 @@ namespace EntrepreneurBuddy
                 p.HasOne<AppUser>().WithMany().HasForeignKey(r=>r.AppUserId);
 
             });
+
+            
             base.OnModelCreating(modelBuilder);
 
         }

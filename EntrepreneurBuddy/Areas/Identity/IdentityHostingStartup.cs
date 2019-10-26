@@ -21,6 +21,7 @@ namespace EntrepreneurBuddy.Areas.Identity
                         context.Configuration.GetConnectionString("DefaultConnection")));
 
                 services.AddDefaultIdentity<AppUser>()
+                    .AddRoles<IdentityRole>()
                     .AddEntityFrameworkStores<AppDbContext>();
             });
         }
