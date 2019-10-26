@@ -68,7 +68,7 @@
             <h4>Add Request</h4>
           </div>
         </div>
-        <div class="row  mt-3">
+        <div class="row mt-3">
           <div class="col-12">
             <input class="form-control" placeholder="Request Topic" v-model="requestForm.topic">
           </div>

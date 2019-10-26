@@ -77,10 +77,12 @@
 
     </div>
     <modal name="confirm-modal">
-      <p>You have been added to this help request!</p>
-      <button type="button" class="button" @click="closeModal">
-        OK!
-      </button>
+      <div class="m-5 text-center">
+        <p class="text-center">You have been added to this help request!</p>
+        <button type="button" class="button" @click="closeModal">
+          OK!
+        </button>
+      </div>
     </modal>
   </div>
 
