@@ -1,10 +1,34 @@
+<style scoped>
+  .search-icon {
+    height: 20px;
+  }
+
+
+  has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+  }
+</style>
+
 <template>
   <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
 
   <div v-else class="container">
     <div class="d-flex justify-content-between align-items-center">
       <h1 class="display-4 name-color mb-4 font-weight-bold text-center">Mentors</h1>
-      <input v-model="filter"></input>
+
+      <div class="form-group has-search">
+        <img class="search-icon" src="/images/search-icon.png">
+        <input v-model="filter" placeholder="Search"></input>
+      </div>
+
     </div>
     <div class="row">
       <div v-for="mentor in filteredMentors" :key="mentor.id" class="col-md-4">
