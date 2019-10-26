@@ -28,6 +28,7 @@ public HomeController(AppDbContext context)
         public IActionResult MentoringRequests(int id)
        {
             var mentor = _context.Mentors.Find(id);
+            mentor.SkillsChanged();
             return View(mentor);
         }
 
