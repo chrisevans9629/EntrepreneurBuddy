@@ -31,7 +31,7 @@ namespace EntrepreneurBuddy.Controllers
         {
             var email = User.Identity.Name;
 
-            var entreprenuer = _context.Entrepenuers.First(p => p.Email == email);
+            var entreprenuer = _context.Entrepenuers.FirstOrDefault(p => p.Email == email);
             return Ok(entreprenuer);
         }
 
