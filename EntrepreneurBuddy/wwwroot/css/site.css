@@ -11,6 +11,27 @@ a.navbar-brand {
   background-color: #24305e;
 }
 
+/* Body styles
+-------------------------------------------------- */
+
+.name-color {
+  color: #be5d16;
+}
+
+.black-text {
+  color: #000;
+}
+
+.button-text {
+  color: #fff;
+}
+
+/* .crop {
+  height: 300px;
+  width: 400px;
+  overflow: hidden;
+ } */
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
