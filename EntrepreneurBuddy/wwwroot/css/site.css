@@ -56,6 +56,12 @@ a.navbar-brand {
   text-decoration: none;
 }
 
+.thumb{
+  height: 20px;
+  width: 20px;
+  margin: 2px;
+}
+
 .button:hover {
   background-color: #4a7897;
 }
@@ -75,6 +81,10 @@ a.link:active {
 
 a.link:hover {
   color: #be5d16;
+}
+
+.badge-blue {
+  background: #4a7897;
 }
 
 /* Sticky footer styles

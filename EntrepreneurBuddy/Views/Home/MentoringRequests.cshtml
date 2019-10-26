@@ -5,6 +5,7 @@
     ViewData["Title"] = "MentoringRequests";
 }
 
-<h1 class="name-color font-weight-bold">Mentoring Requests</h1>
-
-<mentoring-requests :mentor='@Json.Serialize(Model)' class=""></mentoring-requests>
+<div class="text-left">
+    <h1 class="ml-3 name-color mb-4 font-weight-bold">Mentoring Requests</h1>
+        <mentoring-requests :mentor='@Json.Serialize(Model)' class=""></mentoring-requests>
+</div>
