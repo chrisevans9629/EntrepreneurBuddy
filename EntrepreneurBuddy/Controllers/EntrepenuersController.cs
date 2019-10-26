@@ -23,12 +23,12 @@ namespace EntrepreneurBuddy.Controllers
 
         //GET: api/Entrepenuers
        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Entrepenuer>>> GetEntrepenuers()
+        public async Task<ActionResult<IEnumerable<Entreprenuer>>> GetEntrepenuers()
         {
             return await _context.Entrepenuers.ToListAsync();
         }
         [HttpGet("Current")]
-        public async Task<ActionResult<Entrepenuer>> GetSignedInEntreprenuer()
+        public async Task<ActionResult<Entreprenuer>> GetSignedInEntreprenuer()
         {
             var email = User.Identity.Name;
 
@@ -52,10 +52,11 @@ namespace EntrepreneurBuddy.Controllers
         //    return entrepenuer;
         //}
 
-        [HttpPost("{id}/Join/{requestId}")]
-        public async Task<ActionResult<MentoringRequestDto>> JoinMentoringRequest(int id, int requestId)
+        [HttpPost("Join/{requestId}")]
+        public async Task<ActionResult<MentoringRequestDto>> JoinMentoringRequest(int requestId)
         {
-            var entreprenuer = _context.Entrepenuers.FirstOrDefault(p => p.Id == id);
+            var email = User.Identity.Name;
+            var entreprenuer = _context.Entrepenuers.FirstOrDefault(p => p.Email == email);
             if (entreprenuer == null)
             {
                 return BadRequest("Could not find entreprenuer");
@@ -65,7 +66,7 @@ namespace EntrepreneurBuddy.Controllers
             {
                 return BadRequest("could not find mentoring Request");
             }
-            if (_context.EntrepreneurMentoringRequests.Any(p => p.MentoringRequestId == requestId && p.EntreprenuerId == id))
+            if (_context.EntrepreneurMentoringRequests.Any(p => p.MentoringRequestId == requestId && p.EntreprenuerId == entreprenuer.Id))
             {
                 return BadRequest("You already have joined this request");
             }
@@ -73,7 +74,7 @@ namespace EntrepreneurBuddy.Controllers
             {
                 var entreRequest = new EntrepreneurMentoringRequest()
                 {
-                    EntreprenuerId = id,
+                    EntreprenuerId = entreprenuer.Id,
                     MentoringRequestId = requestId,
                 };
                 var requestDto = new MentoringRequestDto()

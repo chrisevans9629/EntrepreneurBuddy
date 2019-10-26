@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace EntrepreneurBuddy.Models
 {
 
-    public class Entrepenuer
+    public class Entreprenuer
     {
         public string AppUserId { get; set; }
         public string FirstName { get; set; }

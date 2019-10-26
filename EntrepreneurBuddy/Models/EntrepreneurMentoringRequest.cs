@@ -7,7 +7,7 @@ namespace EntrepreneurBuddy.Models
         public int Id { get; set; }
         public int EntreprenuerId { get; set; }
         public int MentoringRequestId { get; set; }
-        public IList<Entrepenuer>  Entrepenuers { get; set; }
-        public IList<MentoringRequest> MentoringRequests { get; set; }
+        public Entreprenuer  Entreprenuer { get; set; }
+        public MentoringRequest MentoringRequest { get; set; }
     }
 }
