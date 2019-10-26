@@ -23,28 +23,28 @@
     <div v-if="loading"><img src="/images/loader.gif" alt=""></div>
     <div v-else>
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <img class="card-img" :src="mentor.imageUrl">
-          </div>
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <img class="card-img img-fluid" :src="mentor.imageUrl">
         </div>
 
-        <div class="col-md-6">
-          <div class="ml-3 mt-3">
-            <p class="name-color font-weight-bold">{{mentor.firstName}} {{mentor.lastName}}</p>
-            <p>{{mentor.bio}}</p>
-            <p>{{mentor.skills}}</p>
-            <p>{{mentor.rating}}</p>
-          </div>
+          <div class="col-md-8">
+           <div class="ml-3 mt-3">
+              <p class="name-color font-weight-bold">{{mentor.firstName}} {{mentor.lastName}} | {{mentor.position}}</p>
+              <p>{{mentor.bio}}</p>
+              <p>{{mentor.skills}}</p>
+              <p>{{mentor.rating}}</p>
+            </div>
+           </div>
         </div>
 
 
         <div class="card">
           <div class="border">
-            <div class="tutor-request-card py-3">
+            <div class="navbar-custom tutor-request-card py-3">
               <div class="pl-2 ">
-                <span class="h1 pl-2">Requests</span>
-                <a href="#" class="button mx-5" @click="launchCreateRequestModal()">+ Add Request</a>
+                <span class="h1 pl-2 text-white">Requests</span>
+                <a href="#" class="button-light mx-5 float-right" @click="launchCreateRequestModal()">+ Add Request</a>
               </div>
             </div>
           </div>
@@ -73,7 +73,7 @@
         </div>
         <div class="row mt-3">
           <div class="col-2 offset-8">
-            <button type="button" class="btn" @click="$modal.hide('request-modal')">Cancel</button>
+            <button type="button" class="button" @click="$modal.hide('request-modal')">Cancel</button>
           </div>
           <div class="col-2">
             <button type="button" class="button" @click="submitRequest">

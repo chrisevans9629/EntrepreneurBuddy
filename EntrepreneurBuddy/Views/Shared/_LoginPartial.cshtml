@@ -17,7 +17,7 @@
             }
             else
             {
-                <a id="manage" class="nav-link text-white ml-5" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello, @User.Identity.Name!</a>
+                <a id="manage" class="nav-link text-white ml-5" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello, @UserManager.GetUserName(User)!</a>
             }
 
         </li>

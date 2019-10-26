@@ -83,21 +83,48 @@
 
 
 .card[data-v-e7d9ee82] {
-  border: 1px #efefef solid;
-  -webkit-transition-timing-function: ease-in;
-          transition-timing-function: ease-in;
-  -webkit-transition-property: -webkit-box-shadow;
-  transition-property: -webkit-box-shadow;
-  transition-property: box-shadow;
-  transition-property: box-shadow, -webkit-box-shadow;
-  -webkit-transition-duration: .1s;
-          transition-duration: .1s;
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-  text-align: left;
-  padding: 10px;
-  background-color: #F5F4F4;
-  border-radius: 15px;
-  width: 100%;
+    border: 1px #efefef solid;
+    -webkit-transition-timing-function: ease-in;
+            transition-timing-function: ease-in;
+    -webkit-transition-property: -webkit-box-shadow;
+    transition-property: -webkit-box-shadow;
+    transition-property: box-shadow;
+    transition-property: box-shadow, -webkit-box-shadow;
+    -webkit-transition-duration: .1s;
+            transition-duration: .1s;
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+    text-align: left;
+    padding: 10px;
+    background-color: #F5F4F4;
+    border-radius: 15px;
+    width: 100%;
 }
+.button[data-v-e7d9ee82] {
+  background-color: #24305e;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-decoration: none;
+  line-height: 30px;
+}
+.button-light[data-v-e7d9ee82] {
+  background-color: #91b3be;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  /* padding: 5px 5px; */
+  text-decoration: none;
+  line-height: 30px;
+}
+
 
