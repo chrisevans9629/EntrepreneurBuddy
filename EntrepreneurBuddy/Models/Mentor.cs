@@ -15,5 +15,6 @@ namespace EntrepreneurBuddy.Models
         public string Bio { get; set; }
         public string Position { get; set; }
         public int Rating { get; set; }
+        public int Id { get; set; }
     }
 }
