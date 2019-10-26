@@ -21,12 +21,12 @@ namespace EntrepreneurBuddy.Controllers
             _context = context;
         }
 
-        // GET: api/Entrepenuers
-        //[HttpGet]
-        //public async Task<ActionResult<IEnumerable<Entrepenuer>>> GetEntrepenuers()
-        //{
-        //    return await _context.Entrepenuers.ToListAsync();
-        //}
+        //GET: api/Entrepenuers
+       [HttpGet]
+        public async Task<ActionResult<IEnumerable<Entrepenuer>>> GetEntrepenuers()
+        {
+            return await _context.Entrepenuers.ToListAsync();
+        }
         [HttpGet("Current")]
         public async Task<ActionResult<Entrepenuer>> GetSignedInEntreprenuer()
         {
@@ -53,9 +53,9 @@ namespace EntrepreneurBuddy.Controllers
         //}
 
         [HttpPost("{id}/Join/{requestId}")]
-        public async Task<IActionResult> JoinMentoringRequest(int id, int requestId)
+        public async Task<ActionResult<MentoringRequestDto>> JoinMentoringRequest(int id, int requestId)
         {
-            var entreprenuer = _context.Mentors.FirstOrDefault(p => p.Id == id);
+            var entreprenuer = _context.Entrepenuers.FirstOrDefault(p => p.Id == id);
             if (entreprenuer == null)
             {
                 return BadRequest("Could not find entreprenuer");
@@ -76,10 +76,14 @@ namespace EntrepreneurBuddy.Controllers
                     EntreprenuerId = id,
                     MentoringRequestId = requestId,
                 };
-
+                var requestDto = new MentoringRequestDto()
+                {
+                    Request = request,
+                    AttendCount = _context.EntrepreneurMentoringRequests.Count(r => r.MentoringRequestId == request.Id)
+                };
                 _context.Add(entreRequest);
                 await _context.SaveChangesAsync();
-                return Ok();
+                return Ok(requestDto);
             }
         }
 
