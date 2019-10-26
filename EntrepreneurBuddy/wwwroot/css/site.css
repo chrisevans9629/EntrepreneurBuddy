@@ -11,7 +11,15 @@ a.navbar-brand {
   background-color: #24305e;
 }
 
-/* Body styles
+.nav-link {
+  color: #24305e;
+}
+
+.nav-link:hover {
+  color: #be5d16
+}
+
+/* Body and Component styles
 -------------------------------------------------- */
 
 .name-color {
@@ -22,8 +30,21 @@ a.navbar-brand {
   color: #000;
 }
 
+.navy-text {
+  color: #24305e;
+}
+
 .button-text {
   color: #fff;
+}
+
+.blue-bkgd {
+  background: #4a7897;
+}
+
+.orange-bkgd:active {
+  color: #fff;
+  background-color: #be5d16;
 }
 
 .button {
