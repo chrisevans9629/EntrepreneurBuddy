@@ -82,7 +82,21 @@ namespace EntrepreneurBuddy.Controllers
         [HttpPost]
         public async Task<ActionResult<MentoringRequestDto>> PostMentoringRequest(MentoringRequest mentoringRequest)
         {
+            var email = User.Identity.Name;
+            var entreprenuer = _context.Entrepenuers.FirstOrDefault(p => p.Email == email);
+            if (entreprenuer == null)
+            {
+                return BadRequest("Could not find entreprenuer");
+            }
             _context.MentoringRequests.Add(mentoringRequest);
+
+            var entreRequest = new EntrepreneurMentoringRequest()
+            {
+                EntreprenuerId = entreprenuer.Id,
+                MentoringRequest = mentoringRequest,
+            };
+            _context.EntrepreneurMentoringRequests.Add(entreRequest);
+
             await _context.SaveChangesAsync();
             var request = new MentoringRequestDto()
             {
