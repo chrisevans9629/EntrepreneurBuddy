@@ -54,60 +54,60 @@ namespace EntrepreneurBuddy.Controllers
 
 
         // PUT: api/Mentors/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutMentor(int id, Mentor mentor)
-        {
-            if (id != mentor.Id)
-            {
-                return BadRequest();
-            }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutMentor(int id, Mentor mentor)
+        //{
+        //    if (id != mentor.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(mentor).State = EntityState.Modified;
+        //    _context.Entry(mentor).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MentorExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!MentorExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         // POST: api/Mentors
-        [HttpPost]
-        public async Task<ActionResult<Mentor>> PostMentor(Mentor mentor)
-        {
-            _context.Mentors.Add(mentor);
-            await _context.SaveChangesAsync();
+        //[HttpPost]
+        //public async Task<ActionResult<Mentor>> PostMentor(Mentor mentor)
+        //{
+        //    _context.Mentors.Add(mentor);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMentor", new { id = mentor.Id }, mentor);
-        }
+        //    return CreatedAtAction("GetMentor", new { id = mentor.Id }, mentor);
+        //}
 
         // DELETE: api/Mentors/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Mentor>> DeleteMentor(int id)
-        {
-            var mentor = await _context.Mentors.FindAsync(id);
-            if (mentor == null)
-            {
-                return NotFound();
-            }
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult<Mentor>> DeleteMentor(int id)
+        //{
+        //    var mentor = await _context.Mentors.FindAsync(id);
+        //    if (mentor == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Mentors.Remove(mentor);
-            await _context.SaveChangesAsync();
+        //    _context.Mentors.Remove(mentor);
+        //    await _context.SaveChangesAsync();
 
-            return mentor;
-        }
+        //    return mentor;
+        //}
 
         private bool MentorExists(int id)
         {

@@ -21,64 +21,75 @@ namespace EntrepreneurBuddy.Controllers
         }
 
         // GET: api/MentoringRequests
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<MentoringRequest>>> GetMentoringRequests()
+        [HttpGet("{mentorId}")]
+        public async Task<ActionResult<IEnumerable<MentoringRequestDto>>> GetMentoringRequests(int mentorId)
         {
-            return await _context.MentoringRequests.ToListAsync();
+            return await _context.MentoringRequests.Where(p=>p.MentorId == mentorId).Select(p=> new MentoringRequestDto() 
+            {
+                Request =p, AttendCount = _context.EntrepreneurMentoringRequests.Count(r=>r.MentoringRequestId == p.Id)
+            }).ToListAsync();
         }
+
+       
+
+
 
         // GET: api/MentoringRequests/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<MentoringRequest>> GetMentoringRequest(int id)
-        {
-            var mentoringRequest = await _context.MentoringRequests.FindAsync(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<MentoringRequest>> GetMentoringRequest(int id)
+        //{
+        //    var mentoringRequest = await _context.MentoringRequests.FindAsync(id);
 
-            if (mentoringRequest == null)
-            {
-                return NotFound();
-            }
+        //    if (mentoringRequest == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return mentoringRequest;
-        }
+        //    return mentoringRequest;
+        //}
 
         // PUT: api/MentoringRequests/5
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutMentoringRequest(int id, MentoringRequest mentoringRequest)
-        {
-            if (id != mentoringRequest.Id)
-            {
-                return BadRequest();
-            }
+        //[HttpPut("{id}")]
+        //public async Task<IActionResult> PutMentoringRequest(int id, MentoringRequest mentoringRequest)
+        //{
+        //    if (id != mentoringRequest.Id)
+        //    {
+        //        return BadRequest();
+        //    }
 
-            _context.Entry(mentoringRequest).State = EntityState.Modified;
+        //    _context.Entry(mentoringRequest).State = EntityState.Modified;
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!MentoringRequestExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        //    try
+        //    {
+        //        await _context.SaveChangesAsync();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+        //        if (!MentoringRequestExists(id))
+        //        {
+        //            return NotFound();
+        //        }
+        //        else
+        //        {
+        //            throw;
+        //        }
+        //    }
 
-            return NoContent();
-        }
+        //    return NoContent();
+        //}
 
         // POST: api/MentoringRequests
         [HttpPost]
-        public async Task<ActionResult<MentoringRequest>> PostMentoringRequest(MentoringRequest mentoringRequest)
+        public async Task<ActionResult<MentoringRequestDto>> PostMentoringRequest(MentoringRequest mentoringRequest)
         {
             _context.MentoringRequests.Add(mentoringRequest);
             await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetMentoringRequest", new { id = mentoringRequest.Id }, mentoringRequest);
+            var request = new MentoringRequestDto()
+            {
+                Request = mentoringRequest,
+                AttendCount = _context.EntrepreneurMentoringRequests.Count(r => r.MentoringRequestId == mentoringRequest.Id)
+            };
+            return CreatedAtAction("GetMentoringRequest", new { id = mentoringRequest.Id }, request);
         }
 
         // DELETE: api/MentoringRequests/5
