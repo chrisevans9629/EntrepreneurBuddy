@@ -33,7 +33,7 @@
               <p class="name-color font-weight-bold">{{mentor.firstName}} {{mentor.lastName}} | {{mentor.position}}</p>
               <p>{{mentor.bio}}</p>
               <p>{{mentor.skillsList}}</p>
-                <div class="d-flex">
+                <div class="d-flex border">
                   <p>{{mentor.rating}}</p>
                   <img src="/images/thumbs-up-solid.png" class="thumb ml-2"/>
                 </div>
