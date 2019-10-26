@@ -39,6 +39,11 @@ namespace EntrepreneurBuddy.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            [Url]
+            [Display(Name = "LinkedIn Profile Page Url")]
+            public string LinkedInUrl { get; set; }
+
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -68,6 +73,7 @@ namespace EntrepreneurBuddy.Areas.Identity.Pages.Account
             public string Bio { get; set; }
 
             [Required]
+            [Url]
             [Display(Name = "Profile Image Url")]
             public string Image { get; set; }
 
@@ -110,7 +116,8 @@ namespace EntrepreneurBuddy.Areas.Identity.Pages.Account
                         Position = Input.Position,
                         Skills = Input.Skills,
                         Zip = Input.Zip,
-                        Rating = 0
+                        Rating = 0,
+                        LinkedInUrl = Input.LinkedInUrl
                     };
                     dbContext.Add(entreprenuer);
                     dbContext.SaveChanges();
