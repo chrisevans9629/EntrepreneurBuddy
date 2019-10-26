@@ -1,18 +1,18 @@
 <style scoped>
-  .button {
-    background-color: #24305e;
-    -moz-border-radius: 17px;
-    -webkit-border-radius: 17px;
-    border-radius: 17px;
-    display: inline-block;
-    cursor: pointer;
-    color: #000000;
-    font-family: Arial;
-    font-size: 17px;
-    font-weight: bold;
-    padding: 10px 10px;
-    text-decoration: none;
-  }
+.button {
+  background-color: #24305e;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-decoration: none;
+}
 
   .button:hover {
     background-color: #4a7897;
