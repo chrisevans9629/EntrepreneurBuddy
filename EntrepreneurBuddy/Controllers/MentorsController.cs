@@ -22,7 +22,7 @@ namespace EntrepreneurBuddy.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Mentor>>> GetMentors()
         {
-            var list = await _context.Mentors.ToListAsync();
+            var list = await _context.Mentors.OrderByDescending(p=>p.Rating).ToListAsync();
             foreach (var item in list)
             {
                 item.SkillsChanged();

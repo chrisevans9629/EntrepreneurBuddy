@@ -24,9 +24,13 @@
     <div class="d-flex justify-content-between align-items-center">
       <h1 class="display-4 name-color mb-4 font-weight-bold text-center">Mentors</h1>
 
-      <div class="form-group has-search">
-        <img class="search-icon" src="/images/search-icon.png">
-        <input v-model="filter" placeholder="Search"></input>
+      <div class="form-group has-search row">
+          <div class="col-1 align-content-center">
+              <img class="search-icon" src="/images/search-icon.png">
+          </div>
+          <div class="col">
+              <input class="form-control" v-model="filter" placeholder="Search"></input>
+          </div>
       </div>
 
     </div>
