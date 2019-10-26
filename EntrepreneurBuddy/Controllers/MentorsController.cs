@@ -41,6 +41,18 @@ namespace EntrepreneurBuddy.Controllers
             return mentor;
         }
 
+
+
+        [HttpPost("{id}/Like")]
+        public async Task<IActionResult> PutLike(int id)
+        {
+            var mentor = _context.Mentors.FirstOrDefault(p => p.Id == id);
+            mentor.Rating++;
+            await _context.SaveChangesAsync();
+            return Ok(mentor);
+        }
+
+
         // PUT: api/Mentors/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutMentor(int id, Mentor mentor)

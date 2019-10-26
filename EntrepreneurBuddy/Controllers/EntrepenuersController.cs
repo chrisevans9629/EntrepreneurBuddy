@@ -41,6 +41,38 @@ namespace EntrepreneurBuddy.Controllers
             return entrepenuer;
         }
 
+        [HttpPost("{id}/Join/{requestId}")]
+        public async Task<IActionResult> JoinMentoringRequest(int id, int requestId)
+        {
+            var entreprenuer = _context.Mentors.FirstOrDefault(p => p.Id == id);
+            if(entreprenuer == null)
+            {
+                return BadRequest("Could not find entreprenuer");
+            }
+            var request = _context.MentoringRequests.FirstOrDefault(p => p.Id == requestId);
+            if(request == null)
+            {
+                return BadRequest("could not find mentoring Request");
+            }
+            if(_context.EntrepreneurMentoringRequests.Any(p=>p.MentoringRequestId == requestId && p.EntreprenuerId == id))
+            {
+                return BadRequest("You already have joined this request");
+            }
+            else
+            {
+                var entreRequest = new EntrepreneurMentoringRequest()
+                {
+                    EntreprenuerId = id,
+                    MentoringRequestId = requestId,
+                };
+
+                _context.Add(entreRequest);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+        }
+
+
         // PUT: api/Entrepenuers/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEntrepenuer(int id, Entrepenuer entrepenuer)
