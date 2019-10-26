@@ -11,6 +11,39 @@
     border-radius: 15px;
     width: 100%;
   }
+
+  .button {
+  background-color: #24305e;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.button-light {
+  background-color: #91b3be;
+  -moz-border-radius: 17px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: bold;
+  /* padding: 5px 5px; */
+  text-decoration: none;
+  line-height: 30px;
+}
+
 </style>
 
 
@@ -18,10 +51,10 @@
   <div class="card shadow-sm ">
     <div class="m-2">
       <p><b>Request:</b> {{request.request.topic}}</p>
-      <div class="row" style="padding:10px 10px;">
-        <h3>{{request.attendCount}}</h3>
-        <div style="padding:0px 30px" />
-        <a href="javascript:void(0)" class="button" @click="joinHelpRequest()"> Join Help Request</a>
+      <div class="row float-right name-color" style="padding:10px 10px;">
+        <h3 class="pr-3">{{request.attendCount}}</h3>
+        <!-- <div style="padding:0px 30px" /> -->
+        <a href="javascript:void(0)" class="button-light" @click="joinHelpRequest()"> + Join</a>
       </div>
 
     </div>
