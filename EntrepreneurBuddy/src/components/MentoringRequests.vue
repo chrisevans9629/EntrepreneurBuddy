@@ -26,19 +26,19 @@
         <div class="row align-items-center">
           <div class="col-md-4">
             <img class="card-img img-fluid" :src="mentor.imageUrl">
-        </div>
+          </div>
 
           <div class="col-md-8">
-           <div class="ml-2 mt-3">
+            <div class="ml-2 mt-3">
               <h3 class="name-color font-weight-bold">{{mentor.firstName}} {{mentor.lastName}} | {{mentor.position}}</h3>
               <p>{{mentor.bio}}</p>
               <div class="badge badge-pill text-white badge-blue mr-2 mb-4" v-for="skill in mentor.skillsList" :key="skill">{{skill}}</div>
-                <div class="d-flex">
-                  <p>{{mentor.rating}}</p>
-                  <img src="/images/thumbs-up-solid.png" class="thumb ml-2"/>
-                </div>
+              <div class="d-flex">
+                <p>{{mentor.rating}}</p>
+                <img src="/images/thumbs-up-solid.png" class="thumb ml-2" />
+              </div>
             </div>
-           </div>
+          </div>
         </div>
 
         <div class="card mt-5">
@@ -46,7 +46,7 @@
             <div class="navbar-custom tutor-request-card py-3">
               <div class="pl-2 ">
                 <span class="h1 pl-2 text-white">Requests</span>
-                <a href="#" class="button-light mx-5 float-right" @click="launchCreateRequestModal()">+ Add Request</a>
+                <a href="#" class="button-light mx-5 float-right" @click="launchCreateRequestModal()" v-if="ismentor=='False'">+ Add Request</a>
               </div>
             </div>
           </div>
@@ -108,11 +108,14 @@
         type: Object,
         default: () => { }
       },
+      ismentor: {
+        type: Boolean,
+        default: false
+      }
     },
 
     mounted() {
       this.getMentoringRequests();
-      this.getUser();
 
     },
 

@@ -13,48 +13,66 @@
   }
 
   .button {
-  background-color: #24305e;
-  -moz-border-radius: 17px;
-  -webkit-border-radius: 17px;
-  border-radius: 17px;
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
-  font-family: Arial;
-  font-size: 17px;
-  font-weight: bold;
-  padding: 5px 10px;
-  text-decoration: none;
-  line-height: 30px;
-}
+    background-color: #24305e;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    border-radius: 17px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-decoration: none;
+    line-height: 30px;
+  }
 
-.button-light {
-  background-color: #91b3be;
-  -moz-border-radius: 17px;
-  -webkit-border-radius: 17px;
-  border-radius: 17px;
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
-  font-family: Arial;
-  font-size: 17px;
-  font-weight: bold;
-  /* padding: 5px 5px; */
-  text-decoration: none;
-  line-height: 30px;
-}
+  .button-light {
+    background-color: #91b3be;
+    -moz-border-radius: 17px;
+    -webkit-border-radius: 17px;
+    border-radius: 17px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 17px;
+    font-weight: bold;
+    /* padding: 5px 5px; */
+    text-decoration: none;
+    line-height: 30px;
+  }
 
+  .chevron-down {
+    height: 20px;
+  }
+
+  .bg-white {
+    background-color: white;
+  }
 </style>
 
 
 <template>
   <div class="card shadow-sm ">
     <div class="m-2">
-      <p><b>Request:</b> {{request.request.topic}}</p>
+      <p><b> {{request.request.topic}}</b></p>
       <div class="row float-right name-color" style="padding:10px 10px;">
-        <h3 class="pr-3">{{request.attendCount}}</h3>
-        <!-- <div style="padding:0px 30px" /> -->
+
+        <img src="/images/chevron-down.png" class="chevron-down mr-4 mt-2" v-if="request.emails" @click="showEmails">
+        <div v-if="emailsShowing">
+
+
+          <h3 class="pr-3">{{request.attendCount}} interested</h3>
+          <!-- <div style="padding:0px 30px" /> -->
+
+        </div>
+
         <a href="javascript:void(0)" class="button-light" @click="joinHelpRequest()"> + Join</a>
+        <div class="black-text mt-3 bg-white p-2 rounded" v-for="email in request.emails">
+          {{email}}
+        </div>
       </div>
 
     </div>
@@ -73,6 +91,11 @@
 
   export default {
     name: 'RequestCard',
+    data: () => ({
+      emailsShowing: true
+
+    }),
+
     props: {
       request: {
         type: Object,
@@ -90,6 +113,15 @@
 
       async closeModal() {
         this.$modal.hide('confirm-modal');
+      },
+
+      async showEmails() {
+        if (this.showEmails) {
+          this.showEmails = false
+        }
+        else {
+          this.showEmails = true
+        }
       }
     },
 
