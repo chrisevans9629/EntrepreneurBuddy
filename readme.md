@@ -1,8 +1,7 @@
 
-![](logo.png)
-# entrepreneurchute
-
+![](logo-blue.png)
 ## What is entrepreneurchute?
+
 entrepreneurchute is the latest and greatest technology 
 to connect aspiring entrepreneurs and experienced mentors. 
 
