@@ -18,6 +18,7 @@ namespace EntrepreneurBuddy.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MentoringRequest>(p => p.HasOne<Mentor>().WithMany().HasForeignKey(r=>r.MentorId));
+            modelBuilder.Entity<Entrepenuer>(p => p.HasOne<MentoringRequest>().WithMany().HasForeignKey(r=>r.MentoringRequestId));
 
 
         }
