@@ -39,7 +39,7 @@ After finding the mentor with the skills you are interested in, you can place a 
 Mentors can see the requests created by entrepreneurs and send the requesters emails and then complete the request once the entrepreneurs are satisfied.
 ![mentorrequests](mentorrequests.PNG)
 
-### Analytics
+### :bar_chart: Analytics
 On the analytics page, mentors and entrepreneurs can view a variety of analytics, such as mentor ratings, popular requests, popular skills, and popular request topics
 ![analytics](analytics.PNG)
 
