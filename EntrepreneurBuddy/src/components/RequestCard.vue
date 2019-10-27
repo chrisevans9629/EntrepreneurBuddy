@@ -73,7 +73,15 @@
                 <div class="black-text mt-3 bg-white p-2 rounded" v-for="email in request.emails">
                     {{email}}
                 </div>
-                <a href="javascript:void(0)" class="button-light" @click="completeHelpRequest()" v-if="ismentor=='True' && currentMentor != null && currentMentor.id == request.request.mentorId"> Complete</a>
+
+            </div>
+            <div class="row">
+                <div class="col-5 ml-3">
+                    <a href="javascript:void(0)" class="button-light" @click="completeHelpRequest()" v-if="ismentor=='True' && currentMentor != null && currentMentor.id == request.request.mentorId"> Complete</a>
+                </div>
+                <div class="col-5 ml-3">
+                    <a href="javascript:void(0)" class="button-light" @click="copyEmails()" v-if="ismentor=='True' && currentMentor != null && currentMentor.id == request.request.mentorId"> {{copy}}</a>
+                </div>
             </div>
 
         </div>
@@ -97,8 +105,8 @@
     export default {
         name: 'RequestCard',
         data: () => ({
-            emailsShowing: true
-
+            emailsShowing: true,
+            copy: 'Copy'
         }),
 
         props: {
@@ -131,7 +139,17 @@
             async closeModal() {
                 this.$modal.hide('confirm-modal');
             },
-
+            copyEmails() {
+                var str = this.request.emails.reduce(function reduceFunc(result, value) {  return result + ';' + value;});
+                const el = document.createElement('textarea');
+                el.value = str;
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand('copy');
+                document.body.removeChild(el);
+                this.copy = 'Copied!';
+            },
+            
             async showEmails() {
                 if (this.showEmails) {
                     this.showEmails = false
