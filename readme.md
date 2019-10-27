@@ -40,6 +40,7 @@ Mentors can see the requests created by entrepreneurs and send the requesters em
 ![mentorrequests](mentorrequests.PNG)
 
 ### Analytics
-
+On the analytics page, mentors and entrepreneurs can view a variety of analytics, such as mentor ratings, popular requests, popular skills, and popular request topics
+![analytics](analytics.PNG)
 
 
