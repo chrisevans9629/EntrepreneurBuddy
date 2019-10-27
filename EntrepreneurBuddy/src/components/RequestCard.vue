@@ -51,6 +51,13 @@
     .bg-white {
         background-color: white;
     }
+
+    .custom-control-label::before,
+    .custom-control-label::after {
+        top: .8rem;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
 </style>
 
 
@@ -69,7 +76,11 @@
 
                 </div>
 
-                <a href="javascript:void(0)" class="button-light" @click="joinHelpRequest()" v-if="ismentor=='False'"> + Join</a>
+                <a href="javascript:void(0)" class="button-light" @click="joinHelpRequest()" v-if="ismentor=='False' && request.isJoined != true"> + Join</a>
+                <div class="custom-control form-control-lg custom-checkbox" v-if="ismentor=='False' && request.isJoined == true">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1" checked="checked">
+                    <label class="custom-control-label" for="customCheck1">Joined!</label>
+                </div>
                 <div class="black-text mt-3 bg-white p-2 rounded" v-for="email in request.emails">
                     {{email}}
                 </div>
@@ -130,6 +141,7 @@
             async joinHelpRequest() {
                 await axios.post('/api/Entrepenuers/Join/' + this.request.request.id);
                 this.request.attendCount++;
+                this.request.isJoined = true;
                 this.$modal.show('confirm-modal');
             },
             async completeHelpRequest() {
@@ -140,7 +152,7 @@
                 this.$modal.hide('confirm-modal');
             },
             copyEmails() {
-                var str = this.request.emails.reduce(function reduceFunc(result, value) {  return result + ';' + value;});
+                var str = this.request.emails.reduce(function reduceFunc(result, value) { return result + ';' + value; });
                 const el = document.createElement('textarea');
                 el.value = str;
                 document.body.appendChild(el);
@@ -149,7 +161,7 @@
                 document.body.removeChild(el);
                 this.copy = 'Copied!';
             },
-            
+
             async showEmails() {
                 if (this.showEmails) {
                     this.showEmails = false

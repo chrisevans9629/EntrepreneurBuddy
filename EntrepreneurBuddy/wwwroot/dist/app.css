@@ -149,4 +149,10 @@ has-search .form-control-feedback[data-v-06a2a2af] {
 .bg-white[data-v-e7d9ee82] {
     background-color: white;
 }
+.custom-control-label[data-v-e7d9ee82]::before,
+.custom-control-label[data-v-e7d9ee82]::after {
+    top: .8rem;
+    width: 1.25rem;
+    height: 1.25rem;
+}
 

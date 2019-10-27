@@ -23,12 +23,14 @@ namespace EntrepreneurBuddy.Controllers
         public async Task<ActionResult<IEnumerable<MentoringRequestDto>>> GetMentoringRequests(int mentorId)
         {
             var email = User.Identity.Name;
-            var isMentor = _context.Mentors.Any(p => p.Email == email && p.Id == mentorId);
+            var isCurrentMentor = _context.Mentors.Any(p => p.Email == email && p.Id == mentorId);
+
             return await _context.MentoringRequests.Where(p=>p.MentorId == mentorId).Select(p=> new MentoringRequestDto() 
             {
                 Request =p, 
                 AttendCount = _context.EntrepreneurMentoringRequests.Count(r=>r.MentoringRequestId == p.Id),
-                Emails = isMentor ? _context.EntrepreneurMentoringRequests.Where(r=>r.MentoringRequestId == p.Id).Select(r=>r.Entreprenuer.Email) : null
+                Emails = isCurrentMentor ? _context.EntrepreneurMentoringRequests.Where(r=>r.MentoringRequestId == p.Id).Select(r=>r.Entreprenuer.Email) : null,
+                IsJoined = _context.EntrepreneurMentoringRequests.Any(r=>r.MentoringRequestId == p.Id && r.Entreprenuer.Email == email)
             }).OrderByDescending(p => p.AttendCount).ToListAsync();
         }
         [HttpPost]

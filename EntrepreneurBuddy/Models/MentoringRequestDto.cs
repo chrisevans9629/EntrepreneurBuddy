@@ -9,6 +9,7 @@ namespace EntrepreneurBuddy.Models
     {
         public MentoringRequest Request { get; set; }
         public int AttendCount { get; set; }
-        public IEnumerable<string> Emails { get; set; } 
+        public IEnumerable<string> Emails { get; set; }
+        public bool IsJoined { get; set; }
     }
 }
