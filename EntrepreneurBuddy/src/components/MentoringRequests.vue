@@ -35,6 +35,10 @@
                                 <p>{{mentor.rating}}</p>
                                 <img src="/images/thumbs-up-solid.png" class="thumb ml-2" />
                             </div>
+                            <div class="d-flex" v-if="mentor.linkedInUrl != null">
+                                <a :href="mentor.linkedInUrl"><img src="/images/li.png" class="ml-3" style="width:50px;height:50px" /></a>
+                                <p>Connect with {{mentor.firstName}} on LinkedIn!</p>
+                            </div>
                         </div>
                     </div>
                 </div>
