@@ -161,6 +161,7 @@ namespace EntrepreneurBuddy.Areas.Identity.Pages.Account.Manage
                     mentor.ImageUrl = Input.Mentor.ImageUrl;
                     mentor.Skills = Input.Mentor.Skills;
                     mentor.Bio = Input.Mentor.Bio;
+                    mentor.LinkedInUrl = Input.Mentor.LinkedInUrl;
 
 
                     _appDbContext.Mentors.Update(mentor);
@@ -168,7 +169,14 @@ namespace EntrepreneurBuddy.Areas.Identity.Pages.Account.Manage
                 }
                 if (role == "Entreprenuer")
                 {
+                    var entrepenuer = _appDbContext.Entrepenuers.FirstOrDefault(x => x.Email == email);
 
+                    entrepenuer.FirstName = Input.Entrepenuer.FirstName;
+                    entrepenuer.LastName = Input.Entrepenuer.LastName;
+                   
+
+                    _appDbContext.Entrepenuers.Update(entrepenuer);
+                    await _appDbContext.SaveChangesAsync();
                 }
             }
            
