@@ -19,7 +19,7 @@ new ideas. They can also discover startup businesses to partner with and gain pr
 Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/)  
 If you are a little more tech oriented, [**You can view our open api here**](https://psu-codeathon.azurewebsites.net/swagger)
 ## :camera: Screenshots
-In a hurry? No worries! We can show you how it works here.
+In a hurry? No worries! We can walk you through it here.
 ### Mentors Page 
 Once an entreprenuer/mentor has logged in, they will be taken to the mentors page.  On this page they can **like** mentors, **request** help, and **search** by name, bio, skills, and title of the mentors.
 ![home](home.png)
