@@ -18,10 +18,10 @@ new ideas. They can also discover startup businesses to partner with and gain pr
 ## :open_mouth::open_mouth::open_mouth: That's amazing! but how do I use it?
 Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/).  Feel free to create a new entrepreneur/mentor account!  
 If you'd like to use an existing account, you can use the following accounts:  
-- **Mentor** 
+- :briefcase: **Mentor** 
   - Username: djohnston@gus.pittstate.edu 
   - Password: (123456As)
-- **Entrepreneur**
+- :rocket: **Entrepreneur**
   - Username: ssallington@gmail.com 
   - Password: (123456As)
   
