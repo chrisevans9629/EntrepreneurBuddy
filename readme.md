@@ -24,5 +24,9 @@ In a hurry? No worries! We can walk you through it here.
 Once an entreprenuer/mentor has logged in, they will be taken to the mentors page.  On this page they can **like** mentors, **request** help, and **search** by name, bio, skills, and title of the mentors.
 ![home](home.png)
 ### Mentoring Requests
+After finding the mentor with the skills you are interested in, you can place a request for help or join a current request.
+![requests]()
+### Analytics
+
 
 

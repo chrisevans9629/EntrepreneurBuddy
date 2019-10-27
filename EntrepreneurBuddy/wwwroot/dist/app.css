@@ -75,6 +75,7 @@ has-search .form-control-feedback[data-v-06a2a2af] {
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 20px;
+    /* max-height: 550px; */
 }
 .mentor-card[data-v-942037be]:hover {
     -webkit-box-shadow: 5px 5px 5px -2px rgba(219, 219, 219, 1);
