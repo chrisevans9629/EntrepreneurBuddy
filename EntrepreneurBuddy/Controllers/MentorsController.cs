@@ -29,6 +29,14 @@ namespace EntrepreneurBuddy.Controllers
             }
             return list;
         }
+        [HttpGet("Current")]
+        public async Task<ActionResult<Mentor>> GetSignedInEntreprenuer()
+        {
+            var email = User.Identity.Name;
+
+            var entreprenuer = _context.Mentors.FirstOrDefault(p => p.Email == email);
+            return Ok(entreprenuer);
+        }
         [HttpGet("{id}")]
         public async Task<ActionResult<Mentor>> GetMentor(int id)
         {
