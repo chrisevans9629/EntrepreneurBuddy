@@ -52,7 +52,7 @@
           </div>
           <div class="row mx-0">
             <div v-for="request in mentoringRequests" class="col-md-4 p-4 " :key="request.id">
-              <request-card :request="request" ismentor="ismentor"></request-card>
+              <request-card :request="request" :ismentor="ismentor"></request-card>
             </div>
           </div>
         </div>
