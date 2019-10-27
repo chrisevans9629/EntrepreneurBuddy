@@ -68,12 +68,8 @@
             <div class="row float-right name-color" style="padding:10px 10px;">
 
                 <img src="/images/chevron-down.png" class="chevron-down mr-4 mt-2" v-if="request.emails" @click="showEmails">
-                <div v-if="emailsShowing">
-
-
+                <div>
                     <h3 class="pr-3">{{request.attendCount}} interested</h3>
-                    <!-- <div style="padding:0px 30px" /> -->
-
                 </div>
 
                 <a href="javascript:void(0)" class="button-light" @click="joinHelpRequest()" v-if="ismentor=='False' && request.isJoined != true"> + Join</a>
@@ -81,12 +77,9 @@
                     <input type="checkbox" class="custom-control-input" id="customCheck1" checked="checked">
                     <label class="custom-control-label" for="customCheck1">Joined!</label>
                 </div>
-                <div class="black-text mt-3 bg-white p-2 rounded" v-for="email in request.emails">
+                <div class="black-text mt-3 bg-white p-2 rounded" v-for="email in request.emails" v-if="emailsShowing">
                     {{email}}
                 </div>
-
-            </div>
-            <div class="row">
                 <div class="col-5 ml-3">
                     <a href="javascript:void(0)" class="button-light" @click="completeHelpRequest()" v-if="ismentor=='True' && currentMentor != null && currentMentor.id == request.request.mentorId"> Complete</a>
                 </div>
@@ -94,6 +87,7 @@
                     <a href="javascript:void(0)" class="button-light" @click="copyEmails()" v-if="ismentor=='True' && currentMentor != null && currentMentor.id == request.request.mentorId"> {{copy}}</a>
                 </div>
             </div>
+
 
         </div>
 
@@ -116,7 +110,7 @@
     export default {
         name: 'RequestCard',
         data: () => ({
-            emailsShowing: true,
+            emailsShowing: false,
             copy: 'Copy'
         }),
 
@@ -163,12 +157,13 @@
             },
 
             async showEmails() {
-                if (this.showEmails) {
-                    this.showEmails = false
-                }
-                else {
-                    this.showEmails = true
-                }
+                this.emailsShowing = !this.emailsShowing;
+                //if (this.showEmails) {
+                //    this.showEmails = false
+                //}
+                //else {
+                //    this.showEmails = true
+                //}
             }
         },
 
