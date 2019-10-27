@@ -16,7 +16,15 @@ new ideas. They can also discover startup businesses to partner with and gain pr
 - **Profit** Mentors can offer their services for a fee in any way they would like. Entrepreneurchute simply connects the two parties together!
 - **Efficiency** Entrepreneurs are coming to you for help.  And if entrepreneurs have the same questions/problems, then you can work with them together rather than individually.  Additionally, questions/problems will appear based on the number of people joined.
 ## :open_mouth::open_mouth::open_mouth: That's amazing! but how do I use it?
-Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/)  
+Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/).  Feel free to create a new entrepreneur/mentor account!  
+If you'd like to use an existing account, you can use the following accounts:  
+- **Mentor** 
+  - Username: djohnston@gus.pittstate.edu 
+  - Password: (123456As)
+- **Entrepreneur**
+  - Username: ssallington@gmail.com 
+  - Password: (123456As)
+  
 If you are a little more tech oriented, [**You can view our open api here**](https://psu-codeathon.azurewebsites.net/swagger)
 ## :camera: Screenshots
 In a hurry? No worries! We can walk you through it here.
