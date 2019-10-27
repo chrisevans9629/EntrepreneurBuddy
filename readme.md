@@ -26,10 +26,10 @@ Once an entrepreneur/mentor has logged in, they will be taken to the mentors pag
 ### Mentoring Requests
 After finding the mentor with the skills you are interested in, you can place a request for help or join a current request.
 #### Entrepreneur Perspective
-![requests](requests.png)
+![requests](requests.PNG)
 #### Mentor Perspective
 Mentors can see the requests created by entrepreneurs and send the requesters emails and then complete the request once the entrepreneurs are satisfied.
-![requests](mentorrequests.png)
+![mentorrequests](mentorrequests.PNG)
 
 ### Analytics
 
