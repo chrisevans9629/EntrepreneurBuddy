@@ -44,12 +44,10 @@
                 </div>
 
                 <div class="card mt-5">
-                    <div class="border">
-                        <div class="navbar-custom tutor-request-card py-3">
-                            <div class="pl-2 ">
-                                <span class="h1 pl-2 text-white">Requests</span>
-                                <a href="#" class="button-light mx-5 float-right" @click="launchCreateRequestModal()" v-if="ismentor=='False'">+ Add Request</a>
-                            </div>
+                    <div class="border navbar-custom tutor-request-card py-3">
+                        <div class="pl-2 align-content-center">
+                            <span class="h1 pl-2 text-white">Requests</span>
+                            <a href="#" class="button-light mx-5 float-right" @click="launchCreateRequestModal()" v-if="ismentor=='False'">+ Add Request</a>
                         </div>
                     </div>
                     <div class="row mx-0">
