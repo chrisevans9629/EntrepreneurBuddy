@@ -13,8 +13,8 @@ Mentors can collaborate with entrepreneurs to gain a fresh perspective and new i
 - **Networking** Mentors will get a chance to work with people with similar interests and expand their brand.
 - **Profit** Mentors can offer their services for a fee in any way they would like. Entrepreneurchute simply connects the two parties!
 - **Efficiency** Entrepreneurs are coming to you for help.  And if entrepreneurs have the same questions/problems, then you can work with them together rather than individually.  Additionally, questions/problems will appear based on the number of people joined.
-## Watch our demonstration video on [Youtube]()! (Video not available yet)
-See our presentation and demo of entrepreneurchute on youtube [here]().  Also, this website is fully functional, so don't forget to try it yourself!
+## Watch our demonstration video on [Youtube](https://www.youtube.com/watch?v=jWlpyugmbQA)!
+See our presentation and demo of entrepreneurchute on youtube [here](https://www.youtube.com/watch?v=jWlpyugmbQA).  Also, this website is fully functional, so don't forget to try it yourself!
 ## :open_mouth::open_mouth::open_mouth: That's amazing! but how do I use it?
 Easy! just go to this link [**and try it yourself**](https://psu-codeathon.azurewebsites.net/).  Feel free to create a new entrepreneur/mentor account!  
 If you'd like to use an existing account, you can use the following accounts:  
